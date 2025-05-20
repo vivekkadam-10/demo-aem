@@ -1,0 +1,31 @@
+<!--  AEM Code Assist V15: AI Generated Code Start - -->
+<div data-sly-use.searchComponent="com.divya.demo.core.models.SearchComponentModel">
+    <form role="search" aria-label="Search Form">
+        <input type="text" 
+               placeholder="${searchComponent.searchLabel}" 
+               aria-label="Search Input" 
+               data-sly-test.autocomplete="${searchComponent.autocomplete}">
+        <sly data-sly-test.iconPath="${searchComponent.iconPath}">
+            <img src="${searchComponent.iconPath}" alt="Search Icon" aria-hidden="true">
+        </sly>
+        <button type="submit" aria-label="Submit Search">Search</button>
+    </form>
+    <sly data-sly-test.facetManagement="${searchComponent.facetManagement}">
+        <!-- Facet Management Logic -->
+        <div>Facet Management is enabled.</div>
+    </sly>
+    <sly data-sly-test.analyticsIntegration="${searchComponent.analyticsIntegration}">
+        <!-- Analytics Integration Logic -->
+        <div>Analytics Integration is enabled.</div>
+    </sly>
+    <sly data-sly-test.searchSecurity="${searchComponent.searchSecurity}">
+        <!-- Search Security Logic -->
+        <div>Search Security is enabled.</div>
+    </sly>
+</div>
+
+<sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys'}"></sly>
+
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-call="${template.placeholder @ isEmpty=!exists}"></sly>
+
+<!--  AEM Code Assist V15: AI Generated Code End - -->

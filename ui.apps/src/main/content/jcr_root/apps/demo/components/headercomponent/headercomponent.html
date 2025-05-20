@@ -1,0 +1,24 @@
+<div data-sly-use.headerComponent="com.divya.demo.core.models.HeaderComponentModel">
+    <nav role="navigation" aria-label="${headerComponent.accessibilityLabel}">
+        <sly data-sly-test.navigationRoot="${headerComponent.navigationRoot}">
+            <ul>
+                <sly data-sly-list.page="${headerComponent.navigationPages}">
+                    <li>
+                        <a href="${page.path}">${page.title}</a>
+                    </li>
+                </sly>
+            </ul>
+        </sly>
+        <sly data-sly-test.collectAllPages="${headerComponent.collectAllPages}">
+            <div>
+                <p>All child pages are collected.</p>
+            </div>
+        </sly>
+        <sly data-sly-test.disableShadowing="${headerComponent.disableShadowing}">
+            <div>
+                <p>Shadowing is disabled.</p>
+            </div>
+        </sly>
+    </nav>
+</div>
+<div><sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys'}"></sly></div>

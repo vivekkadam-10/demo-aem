@@ -1,0 +1,33 @@
+<!--  AEM Code Assist V15: AI Generated Code Start - -->
+<div data-sly-use.breadcrumb="com.divya.demo.core.models.BreadcrumbModel">
+    <nav aria-label="Breadcrumb Navigation">
+        <sly data-sly-test.breadcrumbType="${breadcrumb.breadcrumbType == 'Static'}">
+            <sly data-sly-list.breadcrumbItems="${breadcrumb.breadcrumbItems}">
+                <span>${breadcrumbItems.textvalue}</span>
+                <sly data-sly-test="${!breadcrumbItems.last}">
+                    <span>${breadcrumb.breadcrumbSeparator}</span>
+                </sly>
+            </sly>
+        </sly>
+        <sly data-sly-test.breadcrumbType="${breadcrumb.breadcrumbType == 'Dynamic'}">
+            <sly data-sly-list.dynamicItems="${breadcrumb.dynamicItems}">
+                <a href="${dynamicItems.link}" aria-label="${dynamicItems.title}">${dynamicItems.title}</a>
+                <sly data-sly-test="${!dynamicItems.last}">
+                    <span>${breadcrumb.breadcrumbSeparator}</span>
+                </sly>
+            </sly>
+        </sly>
+        <sly data-sly-test.breadcrumbType="${breadcrumb.breadcrumbType == 'Contextual'}">
+            <sly data-sly-list.contextualItems="${breadcrumb.contextualItems}">
+                <a href="${contextualItems.link}" aria-label="${contextualItems.title}">${contextualItems.title}</a>
+                <sly data-sly-test="${!contextualItems.last}">
+                    <span>${breadcrumb.breadcrumbSeparator}</span>
+                </sly>
+            </sly>
+        </sly>
+    </nav>
+</div>
+<sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys'}"></sly>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-call="${template.placeholder @ isEmpty=!exists}"></sly>
+
+<!--  AEM Code Assist V15: AI Generated Code End - -->

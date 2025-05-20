@@ -1,0 +1,11 @@
+<jcr:root
+    componentGroup="demo"
+    cq:isContainer="{Boolean}true"
+    jcr:description="Provides a flexible and dynamic header component for site navigation and branding."
+    jcr:primaryType="cq:Component"
+    jcr:title="Header"
+    sling:resourceSuperType="core/wcm/components/navigation/v2/navigation"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+/>

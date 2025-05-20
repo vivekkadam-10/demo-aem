@@ -1,0 +1,14 @@
+<!--  AEM Code Assist V15: AI Generated Code Start - -->
+<jcr:root
+    componentGroup="demo"
+    cq:isContainer="{Boolean}true"
+    jcr:description="Extends the core list component with advanced list variations and display options."
+    jcr:primaryType="cq:Component"
+    jcr:title="AdvancedListComponent"
+    sling:resourceSuperType="core/wcm/components/list/v4/list"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+/>
+
+<!--  AEM Code Assist V15: AI Generated Code End - -->

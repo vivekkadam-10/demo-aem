@@ -1,6 +1,7 @@
 package com.divya.demo.core.servlets;
 
 
+import com.divya.demo.core.service.CardService;
 import com.divya.demo.core.service.RandomUserService;
 import com.divya.demo.core.service.StateService;
 import com.drew.lang.annotations.NotNull;
@@ -42,6 +43,9 @@ public class RandomUserServlet extends SlingAllMethodsServlet {
     RandomUserService randomUserService;
 
     @Reference
+    CardService cardService;
+
+    @Reference
     private ResourceResolverFactory resolverFactory;
 
     protected void doGet(@NotNull SlingHttpServletRequest request, @NotNull SlingHttpServletResponse response) throws ServletException, IOException {
@@ -68,6 +72,7 @@ public class RandomUserServlet extends SlingAllMethodsServlet {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
                 node.setProperty("gender",json.getString("gender"));
                 Session session = resolver.adaptTo(Session.class);
                 session.save();
@@ -75,7 +80,7 @@ public class RandomUserServlet extends SlingAllMethodsServlet {
             }
 
             response.setContentType("application/json");
-            response.getWriter().write(users.toString());
+            response.getWriter().write(users.toString()+cardService.getOrganizationName());
         } catch ( Exception e) {
             logger.error(e.getMessage(), e);
         }

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  AEM CODE ASSIST V18: AI Generated Code Start - -->
+<jcr:root 
+	xmlns:sling="http://sling.apache.org/jcr/sling/1.0" 
+	xmlns:granite="http://www.adobe.com/jcr/granite/1.0" 
+	xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+	xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0" 
+	jcr:primaryType="nt:unstructured" 
+	jcr:title="Hero Component" 
+	sling:resourceType="cq/gui/components/authoring/dialog">
+	<content 
+		jcr:primaryType="nt:unstructured" 
+		sling:resourceType="granite/ui/components/coral/foundation/container">
+		<items 
+			jcr:primaryType="nt:unstructured">
+			<tabs 
+				jcr:primaryType="nt:unstructured" 
+				sling:resourceType="granite/ui/components/coral/foundation/tabs">
+				<items 
+					jcr:primaryType="nt:unstructured" 
+					sling:hideChildren="[*]">
+					<propertiesTab 
+						jcr:primaryType="nt:unstructured" 
+						jcr:title="Properties" 
+						sling:resourceType="granite/ui/components/coral/foundation/container" 
+						margin="{Boolean}true">
+						<items 
+							jcr:primaryType="nt:unstructured">
+							<columns 
+								jcr:primaryType="nt:unstructured" 
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns" 
+								margin="{Boolean}true">
+								<items 
+									jcr:primaryType="nt:unstructured">
+									<column 
+										jcr:primaryType="nt:unstructured" 
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items 
+											jcr:primaryType="nt:unstructured">
+											<variation 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="granite/ui/components/coral/foundation/form/select" 
+												fieldDescription="Select the variation for the Hero Component." 
+												fieldLabel="Variation" 
+												name="./variation" 
+												required="{Boolean}true">
+												<items 
+													jcr:primaryType="nt:unstructured">
+													<short 
+														jcr:primaryType="nt:unstructured" 
+														text="Short" 
+														value="Short" />
+													<article 
+														jcr:primaryType="nt:unstructured" 
+														text="Article" 
+														value="Article" />
+													<landing 
+														jcr:primaryType="nt:unstructured" 
+														text="Landing" 
+														value="Landing" />
+												</items>
+											</variation>
+											<overline 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="cq/gui/components/authoring/dialog/richtext" 
+												fieldDescription="Enter the overline text." 
+												fieldLabel="Overline" 
+												name="./overline" 
+												useFixedInlineToolbar="{Boolean}true" />
+											<headline 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="cq/gui/components/authoring/dialog/richtext" 
+												fieldDescription="Enter the headline text." 
+												fieldLabel="Headline" 
+												name="./headline" 
+												required="{Boolean}true" 
+												useFixedInlineToolbar="{Boolean}true" />
+											<subhead 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="cq/gui/components/authoring/dialog/richtext" 
+												fieldDescription="Enter the subhead text." 
+												fieldLabel="Subhead" 
+												name="./subhead" 
+												useFixedInlineToolbar="{Boolean}true" />
+											<logoImage 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="cq/gui/components/authoring/dialog/fileupload" 
+												allowUpload="{Boolean}false" 
+												autoStart="{Boolean}false" 
+												class="cq-droptarget" 
+												fieldLabel="Logo Image" 
+												fileNameParameter="./fileName" 
+												fileReferenceParameter="./logoImage" 
+												mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]" 
+												multiple="{Boolean}false" 
+												title="Upload Logo Image" 
+												uploadUrl="${suffix.path}" 
+												useHTML5="{Boolean}true" />
+											<backgroundImage 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="cq/gui/components/authoring/dialog/fileupload" 
+												allowUpload="{Boolean}false" 
+												autoStart="{Boolean}false" 
+												class="cq-droptarget" 
+												fieldLabel="Background Image" 
+												fileNameParameter="./fileName" 
+												fileReferenceParameter="./backgroundImage" 
+												mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]" 
+												multiple="{Boolean}false" 
+												title="Upload Background Image" 
+												uploadUrl="${suffix.path}" 
+												useHTML5="{Boolean}true" />
+											<primaryCtaLink 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="granite/ui/components/coral/foundation/form/pathfield" 
+												fieldDescription="Enter the URL for the primary CTA." 
+												fieldLabel="Primary CTA Link" 
+												name="./primaryCtaLink" 
+												required="{Boolean}true" 
+												rootPath="/content" />
+											<primaryCtaAriaLabel 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+												fieldDescription="Enter the aria-label for the primary CTA." 
+												fieldLabel="Primary CTA Aria-label" 
+												name="./primaryCtaAriaLabel" 
+												required="{Boolean}true" />
+											<primaryCtaOpenInNewWindow 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox" 
+												checked="false" 
+												name="./primaryCtaOpenInNewWindow" 
+												text="Open in new window" 
+												uncheckedValue="false" 
+												value="{Boolean}true" />
+											<secondaryCtaLabel 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+												fieldDescription="Enter the label for the secondary CTA." 
+												fieldLabel="Secondary CTA Label" 
+												name="./secondaryCtaLabel" />
+											<secondaryCtaLink 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="granite/ui/components/coral/foundation/form/pathfield" 
+												fieldDescription="Enter the URL for the secondary CTA." 
+												fieldLabel="Secondary CTA Link" 
+												name="./secondaryCtaLink" 
+												rootPath="/content" />
+											<secondaryCtaAriaLabel 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+												fieldDescription="Enter the aria-label for the secondary CTA." 
+												fieldLabel="Secondary CTA Aria-label" 
+												name="./secondaryCtaAriaLabel" />
+											<secondaryCtaOpenInNewWindow 
+												jcr:primaryType="nt:unstructured" 
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox" 
+												checked="false" 
+												name="./secondaryCtaOpenInNewWindow" 
+												text="Open in new window" 
+												uncheckedValue="false" 
+												value="{Boolean}true" />
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</propertiesTab>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>
+
+<!-- Token Usage: {'total_tokens': 13702, 'completion_tokens': 3596, 'prompt_tokens': 10106} -->
+<!-- Timestamp: 2025-04-10T09:12:46 -->
+<!-- Model Used: gpt-4o-2 -->
+
+<!--  AEM CODE ASSIST V18: AI Generated Code End - -->

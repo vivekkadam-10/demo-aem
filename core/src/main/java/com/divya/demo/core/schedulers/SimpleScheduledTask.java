@@ -17,6 +17,7 @@ package com.divya.demo.core.schedulers;
 
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.Designate;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
@@ -51,15 +52,21 @@ public class SimpleScheduledTask implements Runnable {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private String myParameter;
-    
+
+    /*@Inject
+    Schedular schedular;*/
+
+
     @Override
     public void run() {
         logger.debug("SimpleScheduledTask is now running, myParameter='{}'", myParameter);
     }
 
     @Activate
+    @Modified
     protected void activate(final Config config) {
         myParameter = config.myParameter();
     }
+
 
 }

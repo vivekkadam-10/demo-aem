@@ -3,7 +3,6 @@ package com.divya.demo.core.util;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.AttributeType;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
-import org.osgi.service.metatype.annotations.Option;
 
 @ObjectClassDefinition(
         name = "Country-State Configuration",
@@ -17,7 +16,8 @@ public @interface CountryStateConfig {
      */
     @AttributeDefinition(
             name = "CountryStateMap",
-            description = "Enter the Country:{States}")
+            description = "Enter the Country:{States}",
+            type = AttributeType.STRING)
     public String[] getCountryStateMap();
 
 }

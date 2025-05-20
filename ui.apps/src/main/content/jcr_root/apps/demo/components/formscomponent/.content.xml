@@ -1,0 +1,10 @@
+<jcr:root
+    componentGroup="demo"
+    cq:isContainer="{Boolean}true"
+    jcr:description="Enables the creation, management, and optimization of various form types."
+    jcr:primaryType="cq:Component"
+    jcr:title="Forms"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+/>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  AEM CODE ASSIST V18: AI Generated Code Start - -->
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          cq:actions="[EDIT,DELETE,INSERT,COPYMOVE]"
+          jcr:primaryType="cq:EditConfig">
+    <cq:listeners jcr:primaryType="nt:unstructured"
+                  afterchildinsert="REFRESH_PARENT"
+                  afterdelete="REFRESH_PARENT"
+                  afteredit="REFRESH_PARENT"
+                  afterinsert="REFRESH_PARENT"/>
+</jcr:root>
+        <!--  AEM CODE ASSIST V18: AI Generated Code End - -->

@@ -1,0 +1,36 @@
+<sly data-sly-use.list="com.adobe.cq.wcm.core.components.models.List" data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component" data-sly-use.articlelistitem="com.divya.demo.core.models.ArticleList"
+    data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+<sly  data-sly-test="${properties.listFrom != 'contentfragments'}">
+<ul
+    data-sly-use.itemTemplate="item.html"
+    data-sly-list.item="${list.listItems}"
+    id="${component.id}"
+    data-cmp-data-layer="${list.data.json}"
+    class="cmp-list">
+    <li class="cmp-list__item" data-sly-call="${itemTemplate.item @ list = list, item = item}"
+        data-cmp-data-layer="${item.data.json}"></li>
+</ul>
+
+</sly>
+<sly  data-sly-test="${properties.listFrom == 'contentfragments'}">
+	<ul data-sly-list.fragment="${articlelistitem.getArticleListItems}" data-cmp-data-layer="${list.data.json}" class="cmp-list">
+    	<li class="cmp-list__item" data-cmp-data-layer="${item.data.json}"  data-sly-use.cfTemplates="templates.html">
+			<article id="${fragment.id}"
+                     class="cmp-contentfragment cmp-contentfragment--${fragment.name}"
+                     data-cmp-contentfragment-model="${fragment.type}"
+                     data-sly-attribute.data-cmp-contentfragment-path="${properties.fragments}"
+                     data-json="${!wcmmode.disabled && fragment.editorJSON}"
+                     data-cmp-data-layer="${fragment.data.json}">
+                <h3 class="cmp-contentfragment__title">${fragment.title}</h3>
+                <sly data-sly-test="${fragment.description}">
+                    <p class="cmp-contentfragment__description">${fragment.description}</p>
+                </sly>
+
+
+            </article>
+        </li>
+    </ul>
+</sly>
+
+<sly data-sly-call="${template.placeholder @ isEmpty=list.listItems.size == 0, classAppend='cmp-list'}"></sly>
+</sly>

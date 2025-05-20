@@ -1,0 +1,43 @@
+<!--  AEM CODE ASSIST V18: AI Generated Code Start - -->
+<!-- Include CSS -->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.css @ categories='wknd.components.herocomponent'}" />
+
+<!-- Include JS -->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.js @ categories='wknd.components.herocomponent'}" />
+
+<sly data-sly-use.heroComponent="com.divya.demo.core.models.HeroComponentModel">
+
+  <!-- Hero Component Layout -->
+  <div class="hero-component">
+    <sly data-sly-test="${heroComponent.logoImagePath}">
+      <img src="${heroComponent.logoImagePath @ context='html'}" alt="Logo" loading="lazy" />
+    </sly>
+    <sly data-sly-test="${heroComponent.overline}">
+      <p>${heroComponent.overline @ context='html'}</p>
+    </sly>
+    <h1>${heroComponent.headline @ context='html'}</h1>
+    <sly data-sly-test="${heroComponent.subhead}">
+      <p>${heroComponent.subhead @ context='html'}</p>
+    </sly>
+    <sly data-sly-test="${heroComponent.primaryCtaLink}">
+      <a href="${heroComponent.primaryCtaLink}" class="cta" aria-label="${heroComponent.primaryCtaAriaLabel}" target="${heroComponent.isPrimaryCtaOpenInNewWindow ? '_blank' : '_self'}">Primary CTA</a>
+    </sly>
+    <sly data-sly-test="${heroComponent.secondaryCtaLink}">
+      <a href="${heroComponent.secondaryCtaLink}" class="cta" aria-label="${heroComponent.secondaryCtaAriaLabel}" target="${heroComponent.isSecondaryCtaOpenInNewWindow ? '_blank' : '_self'}">Secondary CTA</a>
+    </sly>
+  </div>
+
+</sly>
+
+<!-- Placeholder for empty component -->
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+  <sly data-sly-call="${template.placeholder}"></sly>
+</sly>
+
+<!-- Token Usage: {'total_tokens': 11851, 'completion_tokens': 694, 'prompt_tokens': 10734} -->
+<!-- Timestamp: 2025-04-10T09:13:46 -->
+<!-- Model Used: gpt-4o-2 -->
+
+<!--  AEM CODE ASSIST V18: AI Generated Code End - -->

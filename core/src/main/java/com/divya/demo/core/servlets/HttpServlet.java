@@ -1,5 +1,6 @@
 package com.divya.demo.core.servlets;
 
+import com.divya.demo.core.service.CustomWorkflowService;
 import com.divya.demo.core.service.HttpService;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -28,7 +29,11 @@ public class HttpServlet extends SlingSafeMethodsServlet {
     private static final Logger log = LoggerFactory.getLogger(HttpServlet.class);
 
     @Reference
+    private CustomWorkflowService customWorkflowService;
+
+    @Reference
     private HttpService httpService;
+
 
     /**
      * Overridden doGet() method
@@ -38,6 +43,17 @@ public class HttpServlet extends SlingSafeMethodsServlet {
 
         try {
 
+            System.out.println("In simple servlet");
+            /*ResourceResolver resourceResolver = request.getResourceResolver();
+            WorkflowSession session = resourceResolver.adaptTo(WorkflowSession.class);
+            WorkflowModel model = session.getModel("/var/workflow/models/request_for_activation");
+            WorkflowData data = session.newWorkflowData("JCR_PATH","/content/we-retail/us/en/men");
+            session.startWorkflow(model,data);
+
+            if(customWorkflowService!=null) {
+                System.out.println("customWorkflowService not null");
+                    customWorkflowService.triggerWorkflow();
+            }*/
             String jsonResponse = httpService.makeHttpCall();
 
             /**

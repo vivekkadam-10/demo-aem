@@ -1,0 +1,43 @@
+<div data-sly-use.formsComponent="com.divya.demo.core.models.FormsComponentModel">
+    <form>
+        <sly data-sly-test.formType="${formsComponent.formType}">
+            <sly data-sly-test.contactForm="${formsComponent.formType == 'contact'}">
+                <h2>Contact Form</h2>
+            </sly>
+            <sly data-sly-test.registrationForm="${formsComponent.formType == 'registration'}">
+                <h2>Registration Form</h2>
+            </sly>
+            <sly data-sly-test.surveyForm="${formsComponent.formType == 'survey'}">
+                <h2>Survey Form</h2>
+            </sly>
+            <sly data-sly-test.orderForm="${formsComponent.formType == 'order'}">
+                <h2>Order Form</h2>
+            </sly>
+            <sly data-sly-test.applicationForm="${formsComponent.formType == 'application'}">
+                <h2>Application Form</h2>
+            </sly>
+        </sly>
+        <sly data-sly-list.formFields="${formsComponent.formFields}">
+            <div>
+                <label>${formFields.fieldName}</label>
+                <sly data-sly-test.textField="${formFields.fieldType == 'text'}">
+                    <input type="text" name="${formFields.fieldName}" />
+                </sly>
+                <sly data-sly-test.numberField="${formFields.fieldType == 'number'}">
+                    <input type="number" name="${formFields.fieldName}" />
+                </sly>
+                <sly data-sly-test.emailField="${formFields.fieldType == 'email'}">
+                    <input type="email" name="${formFields.fieldName}" />
+                </sly>
+            </div>
+        </sly>
+        <button type="submit">${formsComponent.submitButtonLabel}</button>
+        <sly data-sly-test.errorMessage="${formsComponent.errorMessage}">
+            <div>${formsComponent.errorMessage}</div>
+        </sly>
+        <sly data-sly-test.successMessage="${formsComponent.successMessage}">
+            <div>${formsComponent.successMessage}</div>
+        </sly>
+    </form>
+</div>
+<div><sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys'}"></sly></div>

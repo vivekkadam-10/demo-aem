@@ -49,6 +49,7 @@
 
                         <!-- DAM folder root, will be created via repoinit -->
                         <filter><root>/content/dam/demo</root></filter>
+                        <filter><root>/etc/package/wcm-io/root</root></filter>
 
                     </filters>
                 </configuration>

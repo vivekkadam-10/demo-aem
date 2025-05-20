@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Search Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <cq:listeners
+        jcr:primaryType="cq:EditListenersConfig"
+        afteredit="REFRESH_PAGE"
+        afterinsert="REFRESH_PAGE"
+        afterchildinsert="REFRESH_PAGE"/>
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured" sling:hideChildren="[*]">
+                    <propertiesTab jcr:primaryType="nt:unstructured" jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <searchType jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Search Type"
+                                                fieldDescription="Select the type of search to perform."
+                                                name="./searchType"
+                                                required="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <keywordFullText jcr:primaryType="nt:unstructured"
+                                                        text="Keyword/Full-text"
+                                                        value="Keyword/Full-text"
+                                                        name="./keywordFullText" />
+                                                    <faceted jcr:primaryType="nt:unstructured"
+                                                        text="Faceted"
+                                                        value="Faceted"
+                                                        name="./faceted" />
+                                                </items>
+                                            </searchType>
+                                            <autocomplete jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="true"
+                                                name="./autocomplete"
+                                                text="Enable Autocomplete"
+                                                fieldDescription="Enable or disable autocomplete suggestions."
+                                                uncheckedValue="false"
+                                                value="{Boolean}true" />
+                                            <facetManagement jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./facetManagement"
+                                                text="Enable Facet Management"
+                                                fieldDescription="Enable customization of facets for filtering."
+                                                uncheckedValue="false"
+                                                value="{Boolean}true" />
+                                            <analyticsIntegration jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="true"
+                                                name="./analyticsIntegration"
+                                                text="Enable Analytics Integration"
+                                                fieldDescription="Integrate with AEM analytics."
+                                                uncheckedValue="false"
+                                                value="{Boolean}true" />
+                                            <searchSecurity jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="true"
+                                                name="./searchSecurity"
+                                                text="Enable Search Security"
+                                                fieldDescription="Configure search permissions."
+                                                uncheckedValue="false"
+                                                value="{Boolean}true" />
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </propertiesTab>
+                    <searchIconTab jcr:primaryType="nt:unstructured" jcr:title="Search Icon"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <iconPath jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Icon"
+                                                fieldDescription="Upload a search bar icon."
+                                                name="./iconPath"
+                                                rootPath="/content/dam" />
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </searchIconTab>
+                    <searchLabelTab jcr:primaryType="nt:unstructured" jcr:title="Search Label"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <searchLabel jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Search Label"
+                                                fieldDescription="Enter placeholder text for the search bar."
+                                                name="./searchLabel"
+                                                required="{Boolean}true" />
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </searchLabelTab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
+<!--  AEM Code Assist V15: AI Generated Code End - -->

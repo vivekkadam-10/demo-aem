@@ -1,0 +1,54 @@
+<!--  AEM CODE ASSIST V16: AI Generated Code Start - -->
+<div data-sly-use.notificationComponent="com.divya.demo.core.models.NotificationComponentModel">
+    <sly data-sly-test.notificationType="${notificationComponent.notificationType == 'Basic'}">
+        <div>
+            <p>${notificationComponent.notificationLabel}</p>
+        </div>
+    </sly>
+    <sly data-sly-test.notificationType="${notificationComponent.notificationType == 'Alert'}">
+        <div>
+            <p>${notificationComponent.notificationLabel @ context='html'}</p>
+        </div>
+    </sly>
+    <sly data-sly-test.notificationType="${notificationComponent.notificationType == 'Interactive'}">
+        <div>
+            <p>${notificationComponent.notificationLabel @ context='html'}</p>
+            <a href="${notificationComponent.linkURL}">${notificationComponent.linkLabel}</a>
+            <sly data-sly-list.interactionOption="${notificationComponent.interactionOptions}">
+                <input type="checkbox" id="${interactionOption}" name="${interactionOption}" aria-label="${interactionOption}"/>
+            </sly>
+        </div>
+    </sly>
+    <sly data-sly-test.notificationType="${notificationComponent.notificationType == 'Timed'}">
+        <div>
+            <p>${notificationComponent.notificationLabel @ context='html'}</p>
+            <sly data-sly-test.timing="${notificationComponent.timing}">
+                <!-- Logic for timed notification display -->
+                <div>Notification will disappear after ${notificationComponent.timing} seconds.</div>
+            </sly>
+        </div>
+    </sly>
+    <sly data-sly-test.imageIconPath="${notificationComponent.imageIconPath}">
+        <img src="${notificationComponent.imageIconPath @ context='html'}" alt="${notificationComponent.altText}" loading="lazy"/>
+    </sly>
+    <sly data-sly-test.backgroundColor="${notificationComponent.backgroundColor}">
+        <!-- Background color logic -->
+        <div>Background color is set to ${notificationComponent.backgroundColor}.</div>
+    </sly>
+    <sly data-sly-test.textStyle="${notificationComponent.textStyle}">
+        <!-- Text style logic -->
+        <div>Text style is applied as per configuration.</div>
+    </sly>
+    <sly data-sly-test.trackInteractions="${notificationComponent.trackInteractions}">
+        <!-- Interaction tracking logic -->
+        <div>Interaction tracking is enabled.</div>
+    </sly>
+</div>
+
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-call="${template.placeholder @ isEmpty=!exists}"></sly>
+
+<!-- Token Usage: {'total_tokens': 8381, 'completion_tokens': 650, 'prompt_tokens': 7731} -->
+<!-- Timestamp: 2025-02-18T10:23:02 -->
+<!-- Model Used: gpt-4o-2 -->
+
+<!--  AEM CODE ASSIST V16: AI Generated Code End - -->

@@ -1,0 +1,56 @@
+<!--  AEM Code Assist V15: AI Generated Code Start - -->
+<div data-sly-use.versatileNotificationComponent="com.divya.demo.core.models.VersatileNotificationComponentModel">
+
+  <sly data-sly-test.notificationType="${versatileNotificationComponent.notificationType == 'Basic'}">
+    <div role="alert" aria-label="Notification">
+      <p>${versatileNotificationComponent.notificationLabel}</p>
+    </div>
+  </sly>
+
+  <sly data-sly-test.notificationType="${versatileNotificationComponent.notificationType == 'Alert'}">
+    <div role="alert" aria-label="Alert Notification">
+      <p>${versatileNotificationComponent.notificationLabel}</p>
+    </div>
+  </sly>
+
+  <sly data-sly-test.notificationType="${versatileNotificationComponent.notificationType == 'Interactive'}">
+    <div role="alertdialog" aria-label="Interactive Notification">
+      <p>${versatileNotificationComponent.notificationLabel}</p>
+      <a href="${versatileNotificationComponent.linkURL}">${versatileNotificationComponent.linkLabel}</a>
+      <sly data-sly-list.interactionOption="${versatileNotificationComponent.interactionOptions}">
+        <button type="button" aria-label="${interactionOption}">${interactionOption}</button>
+      </sly>
+    </div>
+  </sly>
+
+  <sly data-sly-test.notificationType="${versatileNotificationComponent.notificationType == 'Timed'}">
+    <div role="alert" aria-label="Timed Notification">
+      <p>${versatileNotificationComponent.notificationLabel}</p>
+    </div>
+  </sly>
+
+  <sly data-sly-test.imageIconPath="${versatileNotificationComponent.imageIconPath}">
+    <img src="${versatileNotificationComponent.imageIconPath}" alt="Notification Icon"/>
+  </sly>
+
+  <sly data-sly-test.backgroundColor="${versatileNotificationComponent.backgroundColor}">
+    <div style="background-color: ${versatileNotificationComponent.backgroundColor};">
+      <p>${versatileNotificationComponent.notificationLabel}</p>
+    </div>
+  </sly>
+
+  <sly data-sly-test.textStyle="${versatileNotificationComponent.textStyle}">
+    <style>
+      .notification-text {
+        ${versatileNotificationComponent.textStyle}
+      }
+    </style>
+  </sly>
+
+</div>
+
+<sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys'}"></sly>
+
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-call="${template.placeholder @ isEmpty=!exists}"></sly>
+
+<!--  AEM Code Assist V15: AI Generated Code End - -->

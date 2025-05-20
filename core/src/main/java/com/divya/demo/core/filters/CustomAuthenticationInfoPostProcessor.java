@@ -1,4 +1,4 @@
-package com.divya.demo.core.service;
+package com.divya.demo.core.filters;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.jackrabbit.api.JackrabbitSession;
@@ -48,7 +48,7 @@ public class CustomAuthenticationInfoPostProcessor implements AuthenticationInfo
             try {
 
                 Map<String, Object> serviceParams = new HashMap<String, Object>();
-                serviceParams.put(ResourceResolverFactory.SUBSERVICE, "custom-user-manager");
+                serviceParams.put(ResourceResolverFactory.SUBSERVICE, "custom-user-manager-service");
                 ResourceResolver resolver = resolverFactory.getServiceResourceResolver(serviceParams);
                 session = resolver.adaptTo(Session.class);
 

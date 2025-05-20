@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  AEM CODE ASSIST V18: AI Generated Code Start - -->
+<jcr:root
+        xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+        xmlns:cq="http://www.day.com/jcr/cq/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="CTABannerComponent"
+        sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items
+                jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}false">
+                <items
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideChildren="[*]">
+                    <propertiesTab
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Properties"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items
+                                jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items
+                                        jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items
+                                                jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                    fieldDescription="Enter the heading text for the banner."
+                                                    fieldLabel="Heading"
+                                                    name="./heading"/>
+                                            <subheading
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                    fieldDescription="Enter the subheading text for the banner."
+                                                    fieldLabel="Subheading"
+                                                    name="./subheading"/>
+                                            <description
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                    fieldDescription="Enter the description text for the banner."
+                                                    fieldLabel="Description"
+                                                    name="./description"/>
+                                            <textAndCTAPlacement
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldDescription="Select the placement of text and CTA on the banner."
+                                                    fieldLabel="Text CTA Placement"
+                                                    name="./textAndCTAPlacement"
+                                                    required="{Boolean}true">
+                                                <items
+                                                        jcr:primaryType="nt:unstructured">
+                                                    <top
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Top"
+                                                            value="Top"/>
+                                                    <bottom
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Bottom"
+                                                            value="Bottom"/>
+                                                </items>
+                                            </textAndCTAPlacement>
+                                            <backgroundImage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                    fieldDescription="Upload the background image for the banner."
+                                                    fieldLabel="Background Image"
+                                                    fileReferenceParameter="./backgroundImagePath"
+                                                    allowUpload="{Boolean}false"
+                                                    autoStart="{Boolean}false"
+                                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                    multiple="{Boolean}false"
+                                                    title="Upload Image Asset"
+                                                    useHTML5="{Boolean}true"/>
+                                            <primaryCTALabel
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Enter the label for the primary CTA."
+                                                    fieldLabel="Primary CTA Label"
+                                                    name="./primaryCTALabel"
+                                                    required="{Boolean}true"/>
+                                            <primaryCTALink
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Enter the link for the primary CTA."
+                                                    fieldLabel="Primary CTA Link"
+                                                    name="./primaryCTALink"
+                                                    required="{Boolean}true"
+                                                    rootPath="/content"/>
+                                            <primaryCTAAriaLabel
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Enter the ARIA label for the primary CTA."
+                                                    fieldLabel="Primary CTA Aria-label"
+                                                    name="./primaryCTAAriaLabel"
+                                                    required="{Boolean}true"/>
+                                            <primaryCTAOpenInNewWindow
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="false"
+                                                    name="./primaryCTAOpenInNewWindow"
+                                                    text="Open in new window"
+                                                    uncheckedValue="false"
+                                                    value="{Boolean}true"/>
+                                            <secondaryCTALabel
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Enter the label for the secondary CTA."
+                                                    fieldLabel="Secondary CTA Label"
+                                                    name="./secondaryCTALabel"/>
+                                            <secondaryCTALink
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Enter the link for the secondary CTA."
+                                                    fieldLabel="Secondary CTA Link"
+                                                    name="./secondaryCTALink"
+                                                    rootPath="/content"/>
+                                            <secondaryCTAAriaLabel
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Enter the ARIA label for the secondary CTA."
+                                                    fieldLabel="Secondary CTA Aria-label"
+                                                    name="./secondaryCTAAriaLabel"/>
+                                            <secondaryCTAOpenInNewWindow
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="false"
+                                                    name="./secondaryCTAOpenInNewWindow"
+                                                    text="Open in new window"
+                                                    uncheckedValue="false"
+                                                    value="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </propertiesTab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
+
+        <!-- Token Usage: {'total_tokens': 11941, 'completion_tokens': 1784, 'prompt_tokens': 10157} -->
+        <!-- Timestamp: 2025-04-14T12:36:00 -->
+        <!-- Model Used: gpt-4o-2 -->
+
+        <!--  AEM CODE ASSIST V18: AI Generated Code End - -->

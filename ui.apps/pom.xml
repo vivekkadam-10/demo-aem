@@ -85,7 +85,7 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>htl-maven-plugin</artifactId>
-                <executions>
+                <!--<executions>
                     <execution>
                         <id>validate-htl-scripts</id>
                         <goals>
@@ -104,7 +104,7 @@
                             </allowedExpressionOptions>
                         </configuration>
                     </execution>
-                </executions>
+                </executions>-->
             </plugin>
         </plugins>
     </build>

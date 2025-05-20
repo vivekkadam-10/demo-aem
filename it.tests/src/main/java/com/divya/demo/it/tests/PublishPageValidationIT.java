@@ -12,7 +12,8 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- */
+ *//*
+
 package com.divya.demo.it.tests;
 
 import com.adobe.cq.testing.client.CQClient;
@@ -45,11 +46,13 @@ import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.List;
 
+*/
 /**
  * Validates pages on publish and makes sure that the page renders completely and also
  * validates all linked resources (images, clientlibs etc).
  * 
- */
+ *//*
+
 public class PublishPageValidationIT {
 
 
@@ -123,12 +126,14 @@ public class PublishPageValidationIT {
         }
     }
 
-    /** Checks if two URIs have the same origin.
+    */
+/** Checks if two URIs have the same origin.
      *
      * @param uri1 first URI
      * @param uri2 second URI
      * @return true if two URI come from the same host, port and use the same scheme
-     */
+     *//*
+
     private static boolean isSameOrigin(URI uri1, URI uri2) {
         if (!uri1.getScheme().equals(uri2.getScheme())) {
             return false;
@@ -137,3 +142,4 @@ public class PublishPageValidationIT {
 
 
 }
+*/

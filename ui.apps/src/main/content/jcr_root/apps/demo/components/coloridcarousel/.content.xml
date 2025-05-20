@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><!--  AEM CODE ASSIST V18: AI Generated Code Start - -->
+<jcr:root componentGroup="wknd" cq:isContainer="{Boolean}false" extraClientLibs="[wknd.components.coloridcarousel]"
+          jcr:description="The ColorID Carousel Component allows content authors to present images associated with specific color chips in a carousel format."
+          jcr:primaryType="cq:Component" jcr:title="ColorIDCarousel"
+          sling:resourceSuperType="core/wcm/components/carousel/v1/carousel" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"/><!--  AEM CODE ASSIST V18: AI Generated Code End - -->

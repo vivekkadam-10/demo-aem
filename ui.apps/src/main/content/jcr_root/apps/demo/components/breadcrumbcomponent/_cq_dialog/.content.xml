@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+   xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+   xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+   jcr:primaryType="nt:unstructured"
+   jcr:title="Breadcrumb"
+   sling:resourceType="cq/gui/components/authoring/dialog"
+   helpPath="https://www.adobe.com/go/aem_cmp_breadcrumb_v3"
+   trackingFeature="core-components:breadcrumb:v3">
+   <cq:listeners
+        jcr:primaryType="cq:EditListenersConfig"
+        afteredit="REFRESH_PAGE"
+        afterinsert="REFRESH_PAGE"
+        afterchildinsert="REFRESH_PAGE"/>
+   <content jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/container">
+      <items jcr:primaryType="nt:unstructured">
+         <tabs jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/tabs"
+            maximized="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured" sling:hideChildren="[*]">
+               <propertiesTab jcr:primaryType="nt:unstructured" jcr:title="Properties"
+                  sling:resourceType="granite/ui/components/coral/foundation/container"
+                  margin="{Boolean}true">
+                  <items jcr:primaryType="nt:unstructured">
+                     <columns jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                           <column jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/container">
+                              <items jcr:primaryType="nt:unstructured">
+                                 <breadcrumbType jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldDescription="Select the type of breadcrumb to display."
+                                    fieldLabel="Breadcrumb Type"
+                                    name="./breadcrumbType">
+                                    <items jcr:primaryType="nt:unstructured">
+                                       <static jcr:primaryType="nt:unstructured"
+                                          text="Static"
+                                          value="static"/>
+                                       <dynamic jcr:primaryType="nt:unstructured"
+                                          text="Dynamic"
+                                          value="dynamic"/>
+                                       <contextual jcr:primaryType="nt:unstructured"
+                                          text="Contextual"
+                                          value="contextual"/>
+                                    </items>
+                                 </breadcrumbType>
+                                 <syncWithSiteStructure jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    checked="false"
+                                    fieldDescription="Synchronize breadcrumb with site structure."
+                                    name="./syncWithSiteStructure"
+                                    text="Sync with Site Structure"
+                                    uncheckedValue="false"
+                                    value="{Boolean}true"/>
+                                 <breadcrumbTitle jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Enter a custom title for the breadcrumb."
+                                    fieldLabel="Breadcrumb Title"
+                                    name="./breadcrumbTitle"
+                                    required="{Boolean}true"/>
+                                 <manageLinks jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    checked="true"
+                                    fieldDescription="Enable or disable link management for breadcrumb items."
+                                    name="./manageLinks"
+                                    text="Manage Links"
+                                    uncheckedValue="false"
+                                    value="{Boolean}true"/>
+                              </items>
+                           </column>
+                        </items>
+                     </columns>
+                  </items>
+               </propertiesTab>
+               <styleTab jcr:primaryType="nt:unstructured" jcr:title="Style"
+                  sling:resourceType="granite/ui/components/coral/foundation/container"
+                  margin="{Boolean}true">
+                  <items jcr:primaryType="nt:unstructured">
+                     <columns jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                           <column jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/container">
+                              <items jcr:primaryType="nt:unstructured">
+                                 <breadcrumbSeparator jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldDescription="Select the separator style for breadcrumb items."
+                                    fieldLabel="Breadcrumb Separator"
+                                    name="./breadcrumbSeparator">
+                                    <items jcr:primaryType="nt:unstructured">
+                                       <slash jcr:primaryType="nt:unstructured"
+                                          text="Slash"
+                                          value="slash"/>
+                                       <pipe jcr:primaryType="nt:unstructured"
+                                          text="Pipe"
+                                          value="pipe"/>
+                                       <arrow jcr:primaryType="nt:unstructured"
+                                          text="Arrow"
+                                          value="arrow"/>
+                                    </items>
+                                 </breadcrumbSeparator>
+                                 <breadcrumbItems jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    composite="{Boolean}true"
+                                    fieldDescription="Add breadcrumb items."
+                                    fieldLabel="Breadcrumb Items"
+                                    name="./breadcrumbItems">
+                                    <field jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/coral/foundation/container"
+                                       name="./breadcrumbItems">
+                                       <items jcr:primaryType="nt:unstructured">
+                                          <textvalue jcr:primaryType="nt:unstructured"
+                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                             fieldLabel="Text Value"
+                                             name="./textvalue"/>
+                                          <numbervalue jcr:primaryType="nt:unstructured"
+                                             sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                             fieldLabel="Number Value"
+                                             name="./numbervalue"/>
+                                       </items>
+                                    </field>
+                                 </breadcrumbItems>
+                                 <fontColor jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                    fieldDescription="Select the font color for breadcrumb items."
+                                    fieldLabel="Font Color"
+                                    name="./fontColor"
+                                    showDefaultColors="{Boolean}true"
+                                    showProperties="{Boolean}true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                       <white jcr:primaryType="nt:unstructured" value="#FFFFFF"/>
+                                       <black jcr:primaryType="nt:unstructured" value="#000000"/>
+                                       <blue jcr:primaryType="nt:unstructured" value="#0000FF"/>
+                                    </items>
+                                 </fontColor>
+                              </items>
+                           </column>
+                        </items>
+                     </columns>
+                  </items>
+               </styleTab>
+               <accessibilityTab jcr:primaryType="nt:unstructured" jcr:title="Accessibility"
+                  sling:resourceType="granite/ui/components/coral/foundation/container"
+                  margin="{Boolean}true">
+                  <items jcr:primaryType="nt:unstructured">
+                     <columns jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                           <column jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/container">
+                              <items jcr:primaryType="nt:unstructured">
+                                 <applyAccessibility jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    checked="true"
+                                    fieldDescription="Apply accessibility settings to the breadcrumb."
+                                    name="./applyAccessibility"
+                                    text="Apply Accessibility Settings"
+                                    uncheckedValue="false"
+                                    value="{Boolean}true"/>
+                              </items>
+                           </column>
+                        </items>
+                     </columns>
+                  </items>
+               </accessibilityTab>
+            </items>
+         </tabs>
+      </items>
+   </content>
+</jcr:root>

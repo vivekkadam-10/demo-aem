@@ -1,0 +1,59 @@
+/*  AEM CODE ASSIST V18: AI Generated Code Start - */
+/* Base styling for the Features Component */
+.features-component {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Tile styling */
+.features-component__tile {
+  flex: 1 1 calc(33.333% - 20px);
+  margin: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.features-component__tile img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.features-component__tile-content {
+  padding: 15px;
+}
+
+.features-component__title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.features-component__description {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.features-component__cta {
+  font-size: 1em;
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .features-component__tile {
+    flex: 1 1 100%;
+  }
+}
+
+/* Token Usage: {'total_tokens': 9293, 'completion_tokens': 352, 'prompt_tokens': 8187} */
+/* Timestamp: 2025-04-14T13:56:30 */
+/* Model Used: gpt-4o-2 */
+
+/*  AEM CODE ASSIST V18: AI Generated Code End - */

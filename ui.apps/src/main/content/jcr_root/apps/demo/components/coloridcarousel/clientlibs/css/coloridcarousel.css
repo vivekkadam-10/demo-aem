@@ -1,0 +1,67 @@
+/*  AEM CODE ASSIST V18: AI Generated Code Start - */
+/* Base styling for the ColorID Carousel component */
+.colorid-carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.colorid-carousel .slide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+.colorid-carousel .image-container {
+  flex: 1;
+  max-width: 50%;
+}
+
+.colorid-carousel .details-container {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.colorid-carousel .details-container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.colorid-carousel .navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.colorid-carousel .navigation .arrow {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .colorid-carousel {
+    flex-direction: column;
+  }
+  .colorid-carousel .image-container,
+  .colorid-carousel .details-container {
+    max-width: 100%;
+  }
+}
+
+/* Token Usage: {'total_tokens': 10631, 'completion_tokens': 424, 'prompt_tokens': 9200} */
+/* Timestamp: 2025-04-14T10:14:02 */
+/* Model Used: gpt-4o-2 */
+
+/*  AEM CODE ASSIST V18: AI Generated Code End - */

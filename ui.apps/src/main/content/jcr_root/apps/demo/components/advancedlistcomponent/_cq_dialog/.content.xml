@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Advanced List Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <cq:listeners jcr:primaryType="cq:EditListenersConfig"
+                  afteredit="REFRESH_PAGE"
+                  afterinsert="REFRESH_PAGE"
+                  afterchildinsert="REFRESH_PAGE"/>
+    <content jcr:primaryType="nt:unstructured"
+             sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                  maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured" sling:hideChildren="[*]">
+                    <propertiesTab jcr:primaryType="nt:unstructured"
+                                   jcr:title="Properties"
+                                   sling:resourceType="granite/ui/components/coral/foundation/container"
+                                   margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns jcr:primaryType="nt:unstructured"
+                                     sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                     margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <sourceType jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldDescription="Select the source type for the list."
+                                                        fieldLabel="Source Type"
+                                                        name="./sourceType"
+                                                        required="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <static jcr:primaryType="nt:unstructured"
+                                                            text="Static"
+                                                            value="Static"/>
+                                                    <dynamic jcr:primaryType="nt:unstructured"
+                                                             text="Dynamic"
+                                                             value="Dynamic"/>
+                                                </items>
+                                            </sourceType>
+                                            <layoutOption jcr:primaryType="nt:unstructured"
+                                                          sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                          fieldDescription="Select the layout option for the list."
+                                                          fieldLabel="Layout Options"
+                                                          name="./layoutOption"
+                                                          required="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <grid jcr:primaryType="nt:unstructured"
+                                                          text="Grid"
+                                                          value="Grid"/>
+                                                    <verticalList jcr:primaryType="nt:unstructured"
+                                                                  text="Vertical List"
+                                                                  value="Vertical List"/>
+                                                </items>
+                                            </layoutOption>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </propertiesTab>
+                    <contentTab jcr:primaryType="nt:unstructured"
+                                jcr:title="Content"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns jcr:primaryType="nt:unstructured"
+                                     sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                     margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <listItems jcr:primaryType="nt:unstructured"
+                                                       sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                       composite="{Boolean}true"
+                                                       fieldDescription="Add list items for the static source type."
+                                                       fieldLabel="List Items"
+                                                       name="./listItems">
+                                                <field jcr:primaryType="nt:unstructured"
+                                                       sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                       name="./listItems">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <text jcr:primaryType="nt:unstructured"
+                                                              sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                              fieldLabel="Text"
+                                                              name="./text"/>
+                                                    </items>
+                                                </field>
+                                            </listItems>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </contentTab>
+                    <displayTab jcr:primaryType="nt:unstructured"
+                                jcr:title="Display"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns jcr:primaryType="nt:unstructured"
+                                     sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                     margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <pagination jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                        fieldDescription="Enable pagination for the list."
+                                                        name="./pagination"
+                                                        text="Pagination"
+                                                        uncheckedValue="false"
+                                                        value="{Boolean}true"/>
+                                            <limitItems jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                        fieldDescription="Set the maximum number of items to display."
+                                                        fieldLabel="Limit Items"
+                                                        name="./limitItems"
+                                                        value="10"/>
+                                            <readMoreLabel jcr:primaryType="nt:unstructured"
+                                                           sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                           fieldDescription="Label for the 'Read More' link."
+                                                           fieldLabel="Read More Label"
+                                                           name="./readMoreLabel"/>
+                                            <readMoreLink jcr:primaryType="nt:unstructured"
+                                                          sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                          fieldDescription="URL for the 'Read More' link."
+                                                          fieldLabel="Read More Link"
+                                                          name="./readMoreLink"
+                                                          rootPath="/content"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </displayTab>
+                    <interactivityTab jcr:primaryType="nt:unstructured"
+                                      jcr:title="Interactivity"
+                                      sling:resourceType="granite/ui/components/coral/foundation/container"
+                                      margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns jcr:primaryType="nt:unstructured"
+                                     sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                     margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <interactiveElements jcr:primaryType="nt:unstructured"
+                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                 fieldDescription="Add interactive elements to the list."
+                                                                 name="./interactiveElements"
+                                                                 text="Interactive Elements"
+                                                                 uncheckedValue="false"
+                                                                 value="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </interactivityTab>
+                    <accessibilityTab jcr:primaryType="nt:unstructured"
+                                      jcr:title="Accessibility"
+                                      sling:resourceType="granite/ui/components/coral/foundation/container"
+                                      margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns jcr:primaryType="nt:unstructured"
+                                     sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                     margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <wcagCompliance jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            fieldDescription="Ensure compliance with WCAG 2.1 AA standards."
+                                                            name="./wcagCompliance"
+                                                            text="WCAG Compliance"
+                                                            uncheckedValue="false"
+                                                            value="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </accessibilityTab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
+<!--  AEM Code Assist V15: AI Generated Code End - -->

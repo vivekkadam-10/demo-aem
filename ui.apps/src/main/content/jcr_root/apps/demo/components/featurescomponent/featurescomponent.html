@@ -1,0 +1,37 @@
+<!--  AEM CODE ASSIST V18: AI Generated Code Start - -->
+<!-- Include CSS -->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.css @ categories='wknd.components.featurescomponent'}" />
+
+<!-- Include JS -->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.js @ categories='wknd.components.featurescomponent'}" />
+
+<sly data-sly-use.featuresComponent="com.divya.demo.core.models.FeaturesComponentModel">
+
+  <!-- Features Component Container -->
+  <div class="features-component">
+    <sly data-sly-list.tile="${featuresComponent.tiles}">
+      <div class="features-component__tile">
+        <img src="${tile.backgroundImagePath @ context='html'}" alt="Feature Image" />
+        <div class="features-component__tile-content">
+          <h2 class="features-component__title">${tile.title @ context='html'}</h2>
+          <p class="features-component__description">${tile.description @ context='html'}</p>
+          <a href="${tile.ctaLink}" class="features-component__cta">${tile.ctaText @ context='html'}</a>
+        </div>
+      </div>
+    </sly>
+  </div>
+
+</sly>
+
+<!-- Placeholder for empty component -->
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+  <sly data-sly-call="${template.placeholder}"></sly>
+</sly>
+
+<!-- Token Usage: {'total_tokens': 9293, 'completion_tokens': 502, 'prompt_tokens': 8187} -->
+<!-- Timestamp: 2025-04-14T13:56:30 -->
+<!-- Model Used: gpt-4o-2 -->
+
+<!--  AEM CODE ASSIST V18: AI Generated Code End - -->

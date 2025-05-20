@@ -1,0 +1,15 @@
+<div data-sly-use.breadcrumb="com.divya.demo.core.models.BreadcrumbComponentModel">
+    <nav aria-label="Breadcrumb">
+        <sly data-sly-test.breadcrumbType="${breadcrumb.breadcrumbType}">
+            <sly data-sly-list.breadcrumbItems="${breadcrumb.breadcrumbItems}">
+                <sly data-sly-test.isFirst="${breadcrumbItems.first}">
+                    <span>${breadcrumbItems.textvalue}</span>
+                </sly>
+                <sly data-sly-test.isNotFirst="${!breadcrumbItems.first}">
+                    <span>${breadcrumb.breadcrumbSeparator}</span>
+                    <span>${breadcrumbItems.textvalue}</span>
+                </sly>
+            </sly>
+        </sly>
+    </nav>
+</div>

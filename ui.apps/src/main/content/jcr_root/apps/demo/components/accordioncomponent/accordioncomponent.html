@@ -1,0 +1,18 @@
+<!--  AEM Code Assist V15: AI Generated Code Start - -->
+<div data-sly-use.accordion="com.divya.demo.core.models.AccordionComponentModel">
+  <sly data-sly-list.sections="${accordion.sections}">
+    <section>
+      <h3>${sections.heading @ context='text'}</h3>
+      <div>
+        ${sections.details @ context='html'}
+      </div>
+      <sly data-sly-test="${sections.imagePath}">
+        <img src="${sections.imagePath @ context='uri'}" alt="${sections.imageAltText @ context='text'}" loading="lazy"/>
+      </sly>
+    </section>
+  </sly>
+</div>
+<sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys'}"></sly>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-call="${template.placeholder @ isEmpty=!exists}"></sly>
+
+<!--  AEM Code Assist V15: AI Generated Code End - -->

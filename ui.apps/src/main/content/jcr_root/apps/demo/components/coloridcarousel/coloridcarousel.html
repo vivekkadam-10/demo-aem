@@ -1,0 +1,49 @@
+<!--  AEM CODE ASSIST V18: AI Generated Code Start - -->
+<!-- Include CSS -->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.css @ categories='wknd.components.coloridcarousel'}" />
+
+<!-- Include JS -->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.js @ categories='wknd.components.coloridcarousel'}" />
+
+<sly data-sly-use.colorIDCarousel="com.divya.demo.core.models.ColorIDCarouselModel">
+
+  <!-- Carousel Container -->
+  <div class="colorid-carousel">
+    <sly data-sly-list.slide="${colorIDCarousel.slides}">
+      <div class="slide">
+        <!-- Image Container -->
+        <div class="image-container">
+          <img src="${slide.imagePath @ context='html'}" alt="Color Image" loading="lazy" />
+        </div>
+        <!-- Details Container -->
+        <div class="details-container">
+          <a href="${slide.colorURL}" target="${slide.openInNewWindow ? '_blank' : '_self'}">
+            <h3>${slide.colorName}</h3>
+            <div class="color-icon" style="background-color: ${slide.colorHexcode};"></div>
+            <p>Color ID: ${slide.colorID}</p>
+            <p>Color Number: ${slide.colorNumber}</p>
+          </a>
+        </div>
+      </div>
+    </sly>
+    <!-- Navigation Arrows -->
+    <div class="navigation">
+      <div class="arrow arrow-prev" aria-label="Previous Slide">&#9664;</div>
+      <div class="arrow arrow-next" aria-label="Next Slide">&#9654;</div>
+    </div>
+  </div>
+
+</sly>
+
+<!-- Placeholder for empty component -->
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+  <sly data-sly-call="${template.placeholder}"></sly>
+</sly>
+
+<!-- Token Usage: {'total_tokens': 10631, 'completion_tokens': 626, 'prompt_tokens': 9200} -->
+<!-- Timestamp: 2025-04-14T10:14:02 -->
+<!-- Model Used: gpt-4o-2 -->
+
+<!--  AEM CODE ASSIST V18: AI Generated Code End - -->

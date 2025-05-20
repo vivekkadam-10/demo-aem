@@ -1,0 +1,45 @@
+<!--  AEM CODE ASSIST V18: AI Generated Code Start - -->
+<!-- Include CSS -->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.css @ categories='wknd.components.ctabannercomponent'}" />
+
+<!-- Include JS -->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.js @ categories='wknd.components.ctabannercomponent'}" />
+
+<sly data-sly-use.ctaBannerComponent="com.divya.demo.core.models.CTABannerComponentModel">
+
+  <!-- CTA Banner Component -->
+  <div class="cta-banner-component"
+       style="background-image: url('${ctaBannerComponent.backgroundImagePath @ context='html'}');">
+    <h1>${ctaBannerComponent.heading @ context='html'}</h1>
+    <h2>${ctaBannerComponent.subheading @ context='html'}</h2>
+    <p>${ctaBannerComponent.description @ context='html'}</p>
+    <div class="cta-buttons">
+      <a href="${ctaBannerComponent.primaryCTALink}"
+         aria-label="${ctaBannerComponent.primaryCTAAriaLabel}"
+         data-open-in-new-window="${ctaBannerComponent.isPrimaryCTAOpenInNewWindow}">
+        ${ctaBannerComponent.primaryCTALabel}
+      </a>
+      <sly data-sly-test="${ctaBannerComponent.secondaryCTALabel}">
+        <a href="${ctaBannerComponent.secondaryCTALink}"
+           aria-label="${ctaBannerComponent.secondaryCTAAriaLabel}"
+           data-open-in-new-window="${ctaBannerComponent.isSecondaryCTAOpenInNewWindow}">
+          ${ctaBannerComponent.secondaryCTALabel}
+        </a>
+      </sly>
+    </div>
+  </div>
+
+</sly>
+
+<!-- Placeholder for empty component -->
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+  <sly data-sly-call="${template.placeholder}"></sly>
+</sly>
+
+<!-- Token Usage: {'total_tokens': 11565, 'completion_tokens': 627, 'prompt_tokens': 10397} -->
+<!-- Timestamp: 2025-04-14T12:36:24 -->
+<!-- Model Used: gpt-4o-2 -->
+
+<!--  AEM CODE ASSIST V18: AI Generated Code End - -->

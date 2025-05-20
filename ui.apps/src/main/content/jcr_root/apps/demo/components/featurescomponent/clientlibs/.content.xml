@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  AEM CODE ASSIST V18: AI Generated Code Start - -->
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          jcr:primaryType="cq:ClientLibraryFolder"
+          categories="[wknd.components.featurescomponent]"
+          allowProxy="{Boolean}true"
+          cssProcessor="[default:none,min:none]"
+          jsProcessor="[default:none,min:none]"/>
+        <!--  AEM CODE ASSIST V18: AI Generated Code End - -->
