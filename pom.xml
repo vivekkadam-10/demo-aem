@@ -47,7 +47,10 @@
 <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 <componentGroupName>Demo Project</componentGroupName>
     <lombok.version>1.18.36</lombok.version>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
 </properties>
+
 <build>
 <plugins>
 <!--  Maven Release Plugin  -->
